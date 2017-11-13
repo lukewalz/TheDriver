@@ -123,7 +123,6 @@ namespace TheDriver
                         catch
                         {
                             continue;
-                            return timeList;
                         }
                         return timeList;
 

@@ -206,9 +206,11 @@
     <None Include="Properties\PublishProfiles\TheDriver - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -238,7 +240,9 @@
     <Content Include="Icons\ic_whatshot_white_48dp_2x.png" />
     <Content Include="Login.aspx" />
     <Content Include="Register.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Default.aspx.cs">

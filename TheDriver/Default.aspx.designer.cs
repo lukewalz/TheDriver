@@ -76,13 +76,13 @@ namespace TheDriver {
         protected global::System.Web.UI.HtmlControls.HtmlInputText location;
         
         /// <summary>
-        /// service control.
+        /// serviceer control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlSelect service;
+        protected global::System.Web.UI.HtmlControls.HtmlSelect serviceer;
         
         /// <summary>
         /// requestride control.
@@ -101,5 +101,17 @@ namespace TheDriver {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl cook;
+        
+        /// <summary>
+        /// Master property.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated property.
+        /// </remarks>
+        public new TheDriver.Master Master {
+            get {
+                return ((TheDriver.Master)(base.Master));
+            }
+        }
     }
 }

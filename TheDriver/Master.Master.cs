@@ -9,11 +9,13 @@ namespace TheDriver
 {
     public partial class Master : System.Web.UI.MasterPage
     {
+        public string userEmail;
         internal bool _access = false;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Request.Cookies["UserSettings"] != null)
             {
+                userEmail = Request.Cookies["UserSettings"]["EmailAddress"];
                 greet.Visible = true;
                 account.Visible = false;
                 greetingText.InnerText = "Hello " + Server.HtmlEncode(Request.Cookies["UserSettings"]["FirstName"]);

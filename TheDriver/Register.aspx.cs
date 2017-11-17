@@ -11,6 +11,7 @@ namespace TheDriver
 {
     public partial class Register : System.Web.UI.Page
     {
+        public User _user = new TheDriver.User();
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -31,8 +32,20 @@ namespace TheDriver
                     _command.Parameters.AddWithValue("@Password", _password);
                     _command.Parameters.AddWithValue("@PhoneNumber", _phoneNumber);
                     _command.Parameters.AddWithValue("@EmailAddress", _emailAddress);
-                    SqlDataReader reader = _command.ExecuteReader();
+
+                    long reader =Convert.ToInt64(_command.ExecuteScalar());
+
+                    HttpCookie myCookie = new HttpCookie("UserSettings");
+                    myCookie["FirstName"] = _user.FirstName;
+                    myCookie["LastName"] = _user.LastName;
+                    myCookie["EmailAddress"] = _user.EmailAddress;
+                    myCookie["PhoneNumber"] = _user.PhoneNumber;
+                    myCookie["Id"] = _user.ID.ToString();
+                    myCookie.Expires.AddDays(12);
+                    Response.Cookies.Add(myCookie);
+                    Response.Redirect("/Default.aspx");
                 }
+
             }
         }
 
